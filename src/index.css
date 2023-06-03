@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer base {
+  :root {
+    --columns: auto 1fr 1fr;
+  }
+  * {
+    @apply m-0 p-0 box-border;
+  }
+
+  body {
+    @apply bg-[#151515];
+  }
+
+  button {
+    @apply flex justify-center items-center outline-none border-none;
+  }
+
+  input::placeholder {
+    @apply text-[.9rem] text-[#747474];
+  }
+
+}
+
+
+@layer components {
+  table > tbody > tr {
+    display: grid;
+    grid-template-columns: var(--columns);
+    justify-items: center;
+    align-items: center;
+  }
+
+  @media (min-width: 520px) {
+    tr {
+      --columns: auto 1fr 1fr .5fr;
+    }
+    tr > #onScreen, #onScreen {
+      @apply flex;
+    }
+  }
+}
